@@ -34,6 +34,7 @@ const Launches = () => {
   const { data, loading, error } = useQuery(LAUNCH_QUERY, {
     onCompleted: (data) => {
       console.log("graphql", data)
+      setFltData(data.launches)
       setPageData(data.launches.slice(0, 14))
     },
   })
@@ -43,7 +44,7 @@ const Launches = () => {
   if (loading) return "Loading..."
   if (error) return <pre>{error.message}</pre>
 
-  console.log("data launch from lauches", data)
+  console.log("data launch from lauches", data.launches)
 
   function handlePagination(pageNo) {
     // dispatch(getLaunches({ pageNo: pageNo, limit: 15 }))
@@ -52,7 +53,7 @@ const Launches = () => {
 
   function handleOnChange(e) {
     console.log("key press", e.target.value)
-    onChangeLogic(e, data, setFltData, setPageData, "mission_name")
+    onChangeLogic(e, data.launches, setFltData, setPageData, "mission_name")
     // setPageCount(Math.ceil(fltData.length / 15))
   }
 
