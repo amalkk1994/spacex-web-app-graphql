@@ -5,9 +5,9 @@ const ShipCard = ({ shipItem }) => {
   console.log("ship card")
   return (
     <div className="bg-slate-200 p-10">
-      <FieldValueItem field="Ship Id" value={shipItem.ship_id} />
-      <FieldValueItem field="Ship Name" value={shipItem.ship_name} />
-      <FieldValueItem field="Ship Type" value={shipItem.ship_type} />
+      <FieldValueItem field="Ship Id" value={shipItem.id} />
+      <FieldValueItem field="Ship Name" value={shipItem.name} />
+      <FieldValueItem field="Ship Type" value={shipItem.type} />
     </div>
   )
 }

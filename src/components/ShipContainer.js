@@ -8,7 +8,7 @@ const ShipContainer = ({ data }) => {
       <ul className="grid grid-cols-1 gap-10 ">
         {data?.map((dataItem) => (
           <ShipCard
-            key={dataItem.ship_id.toString() + dataItem.ship_name}
+            key={dataItem.id.toString() + dataItem.name}
             shipItem={dataItem}
           />
         ))}
