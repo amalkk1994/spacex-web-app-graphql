@@ -8,7 +8,7 @@ const MissionContainer = ({ data }) => {
       <ul className="grid grid-cols-1 gap-10 ">
         {data?.map((dataItem) => (
           <MissionCard
-            key={dataItem.mission_id.toString() + dataItem.mission_name}
+            key={dataItem.id.toString() + dataItem.name}
             missionItem={dataItem}
           />
         ))}
